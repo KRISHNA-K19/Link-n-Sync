@@ -75,7 +75,7 @@ export default function ChatWindow({
           schema: 'public',
           table: 'messages',
         },
-        (payload) => {
+        (payload: any) => {
           const newMessage = payload.new as Message;
           if (
             (newMessage.sender_id === currentUser.id &&

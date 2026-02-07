@@ -18,7 +18,8 @@ export default function Home() {
     setMounted(true);
 
     // Get initial session
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    supabase.auth.getSession().then((data: any) => {
+      const session = data.session;
       if (session?.user?.id && session?.user?.email) {
         setUser({ id: session.user.id, email: session.user.email });
       }
@@ -26,7 +27,7 @@ export default function Home() {
     });
 
     // Listen for auth changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event: any, session: any) => {
       if (session?.user?.id && session?.user?.email) {
         setUser({ id: session.user.id, email: session.user.email });
       } else {

@@ -44,7 +44,7 @@ export default function UserList({
           schema: 'public',
           table: 'messages',
         },
-        (payload) => {
+        (payload: any) => {
           const newMessage = payload.new as any;
           console.log('New message received:', newMessage);
           if (newMessage.receiver_id === currentUser.id && newMessage.sender_id !== currentUser.id) {
