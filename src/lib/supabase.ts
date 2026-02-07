@@ -1,13 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+const supabaseUrl = "https://riiuxrcjuugfiuinnrkm.supabase.co";
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJpaXV4cmNqdXVnZml1aW5ucmttIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzAyOTQ5MTIsImV4cCI6MjA4NTg3MDkxMn0.5B2buYrJMmPfw7mKK7G7Kt2pIl4Yg-uBelkVEnhrkfQ";
 
-function getSupabaseClient() {
-    if (!supabaseUrl || !supabaseKey) {
-        throw new Error('Supabase URL and Anon Key are required');
-    }
-    return createClient(supabaseUrl, supabaseKey);
-}
-
-export const supabase = typeof window !== 'undefined' ? getSupabaseClient() : null as any;
+export const supabase = createClient(supabaseUrl, supabaseKey);
