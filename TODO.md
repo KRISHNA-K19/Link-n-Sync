@@ -1,0 +1,4 @@
+- [x] Update sendMessage function in ChatWindow.tsx to immediately add the sent message to local state after successful insert
+- [x] Change the text color of sent messages from white to black for visibility
+- [x] Fix input text visibility by adding text-black to the input field
+- [x] Fix realtime messaging by making channel name symmetric for both users
